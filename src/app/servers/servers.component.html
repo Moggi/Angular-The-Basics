@@ -1,0 +1,18 @@
+<p>The ServerS component</p>
+<br>
+<label>Server Name</label>
+<input type="text"
+    class="form-control"
+    [(ngModel)]="serverName"
+    (input)="onUpdateServerName($event)">
+<button
+    class="btn btn-primary"
+    [disabled]="serverName === ''"
+    (click)="onCreateServer()">Add Server</button>
+
+<br>
+<ul>
+    <li *ngFor="let server of servers">
+        <app-server [serverName]="server.name"></app-server>
+    </li>
+</ul>
